@@ -7,7 +7,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server",
+    "dev": "nodemon ./app/index",
+    "start": "node ./app/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
