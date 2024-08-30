@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    command: yarn start
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    depends_on:
+      - 'db'
+  db:
+    image: mysql:5.7.31
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'image-reading'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - '3306:3306'
+volumes:
+  db:

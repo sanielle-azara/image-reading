@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "name": "image-reading",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanielle-azara/image-reading.git"
+  },
+  "keywords": [],
+  "author": "sanielle-azara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanielle-azara/image-reading/issues"
+  },
+  "homepage": "https://github.com/sanielle-azara/image-reading#readme",
+  "description": ""
+}
