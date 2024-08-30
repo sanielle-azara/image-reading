@@ -12,7 +12,7 @@ services:
     image: mysql:5.7.31
     restart: always
     environment:
-      MYSQL_DATABASE: 'image-reading'
+      MYSQL_DATABASE: 'image-reading-db'
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'root'
       MYSQL_ROOT_PASSWORD: 'root'
