@@ -1,13 +1,14 @@
 const mysql = require('mysql');
 
-const con = mysql.createConnection({
-  host: 'localhost:3306',
+const connection = mysql.createConnection({
+  host: 'mysql',
   user: 'root',
   password: 'root',
-  database: 'image-reading-db',
+  database: 'image_reading',
+  port: '3306',
 });
 
-con.connect((err) => {
+connection.connect((err) => {
   if (err) {
     console.log('Erro connecting to database...', err);
     return;
@@ -15,10 +16,4 @@ con.connect((err) => {
   console.log('Connection established!');
 });
 
-con.end((err) => {
-  if (err) {
-    console.log('Erro to finish connection...', err);
-    return;
-  }
-  console.log('The connection was finish...');
-});
+module.exports = connection;

@@ -1,6 +1,7 @@
 services:
   app:
     build: .
+    container_name: image-reading
     command: yarn dev
     ports:
       - '3000:3000'
@@ -8,11 +9,14 @@ services:
       - .:/app
     depends_on:
       - 'db'
+    networks:
+      - net
   db:
     image: mysql:5.7.31
+    container_name: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: 'image-reading-db'
+      MYSQL_DATABASE: 'image_reading'
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'root'
       MYSQL_ROOT_PASSWORD: 'root'
@@ -20,5 +24,10 @@ services:
       - db:/var/lib/mysql
     ports:
       - '3306:3306'
+    networks:
+      - net
 volumes:
   db:
+
+networks:
+  net:
