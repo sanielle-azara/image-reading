@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('./api/database/mysql');
+require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const util = require('util');
@@ -66,13 +67,13 @@ app.post('/upload', async (req, res) => {
       },
     },
     {
-      text: 'Essa é uma foto de um medidor de aguá/gas preciso dos numeros da medição. Me retorne um json no seguinte formato: { "measure_value": aqui você preenche os números da medição }',
+      text: 'Essa é uma foto de um medidor de aguá/gas preciso dos numeros da medição. Me retorne SEMPRE apenas os numeros da medição.',
     },
   ]);
 
   const response = {
     image_url: 'http://localhost:3000/storage/image.png',
-    measure_value: JSON.parse(result.response.text()).measure_value,
+    measure_value: result.response.text(),
     measure_uuid: uuidv4(),
   };
 
